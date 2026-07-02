@@ -19,6 +19,4 @@ A collection of production-ready custom KQL (Kusto Query Language) analytics and
 | **Mass Email Forwarding Rule** | `OfficeActivity` | Medium | Flags inbox rules routing mail out to external unauthorized domains. |
 | **Unusual Azure Resource Deletion** | `AzureActivity` | Medium | Monitors high-frequency resource deletions indicative of destructive behavior. |
 | **Privilege Access Granted** | `AuditLogs` | Medium | Identifies when subscription or resource ownership access is assigned. |
-| **HTTP Unauthorized Brute Force** | `CommonSecurityLog` | Medium | Flags mass web server authorization failures excluding known safe hosts. |
 | **External NSG Modifications** | `AzureActivity` | High | Tracks structural Network Security Group edits made from outside corporate IP spaces. |
-| **Apache Security Bypass** | `CommonSecurityLog` | High | Detects specific reverse proxy exploitation patterns while filtering false domains. |
