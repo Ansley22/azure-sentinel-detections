@@ -504,10 +504,6 @@ Potential False Positives: Internal connectivity testing monitors or aggressive 
 
 **Attempt(40015)"**
 
-&#x20;    **and SourceIP == "10.40.9.81"**
-
-&#x20;    **and DestinationIP == "10.83.40.19"**
-
 &#x20;        **)**
 
 **| summarize**
@@ -558,15 +554,11 @@ Potential False Positives: Authorized on-call administrators modifying parameter
 
 **"MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/SECURITYRULES/Delete"**
 
-**| where CallerIpAddress !contains "115.117.115.6" and CallerIpAddress**
-
-**!contains "182.73.173.74"**
-
 **| extend timestamp = TimeGenerated, Resource = ResourceId, Status =**
 
 **ActivityStatus**
 
-**//| summarize count= count() by OperationNameValue, Caller,**
+**| summarize count= count() by OperationNameValue, Caller,**
 
 **CallerIpAddress, CategoryValue, ResourceGroup**
 
