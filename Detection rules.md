@@ -482,59 +482,6 @@ Potential False Positives: Direct resource allocation matching normal admin onbo
 
 
 
-**HTTP Unauthorized Brute Force Attack(40031)** - Monitors standardized perimeter syslog feeds mapping ongoing web authentication loops dropping unauthorized responses.
-
-
-
-Potential False Positives: Internal connectivity testing monitors or aggressive vulnerability scanners operating natively.
-
-
-
-&#x09;KQL -
-
-
-
-**CommonSecurityLog**
-
-**| where LogSeverity contains "4"**
-
-**| where not (**
-
-&#x20;            **DeviceEventClassID == "SSH User Authentication Brute Force**
-
-**Attempt(40015)"**
-
-&#x20;        **)**
-
-**| summarize**
-
-&#x20;    **by**
-
-&#x20;    **TimeGenerated,**
-
-&#x20;    **DeviceVersion,**
-
-&#x20;    **DeviceEventClassID,**
-
-&#x20;    **SourceUserName,**
-
-&#x20;    **SourceIP,**
-
-&#x20;    **SourcePort,**
-
-&#x20;    **DestinationIP,**
-
-&#x20;    **DestinationPort,**
-
-&#x20;    **RequestURL,**
-
-&#x20;    **DeviceAction,**
-
-&#x20;    **ApplicationProtocol,**
-
-&#x20;    **EventCount**
-
-
 
 **Changes to Network Security Groups (NSGs) made from outside the office -** Immediately tracks firewall policy alterations targeting active cloud structures executing outside standard trusted corporate egress spaces.
 
@@ -563,44 +510,6 @@ Potential False Positives: Authorized on-call administrators modifying parameter
 **CallerIpAddress, CategoryValue, ResourceGroup**
 
 
-
-**Apache HTTP Server Reverse Proxy Security Bypass Vulnerability(34485) -** Identifies indicators matching reverse proxy web exploitation behavior payloads while skipping out established expected validation domains.
-
-
-
-Potential False Positives: Third-party vendor platforms utilizing overlapping, unconventional API tracking strings.
-
-
-
-**CommonSecurityLog**
-
-**| where LogSeverity == "3"**
-
-**| where not(DeviceEventClassID has\_any (excludeDomains))**
-
-**| summarize**
-
-&#x20;    **by**
-
-&#x20;    **TimeGenerated,**
-
-&#x20;    **DeviceVersion,**
-
-&#x20;    **DeviceEventClassID,**
-
-&#x20;    **SourceUserName,**
-
-&#x20;    **SourceIP,**
-
-&#x20;    **SourcePort,**
-
-&#x20;    **DestinationIP,**
-
-&#x20;    **DestinationPort,**
-
-&#x20;    **RequestURL,**
-
-&#x20;    **AdditionalExtensions,**
 
 &#x20;    **DeviceAction,**
 
